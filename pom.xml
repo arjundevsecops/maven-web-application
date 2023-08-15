@@ -36,8 +36,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- Remove duplicate javax.servlet-api dependency -->
+	    
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
