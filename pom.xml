@@ -42,6 +42,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Remove duplicate javax.servlet-api dependency -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -74,19 +82,7 @@
     </dependencies>
 
     <distributionManagement>
-
-        <repository>
-            <id>nexus</id>
-            <name>Mithun Technologies Releases Nexus Repository</name>
-            <url>http://172.31.45.41:9980/mithuntechnologies/repository/facebook-releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>nexus</id>
-            <name>Mithun Technologies Snapshot Nexus Repository </name>
-            <url>http://172.31.45.41:9980/mithuntechnologies/repository/facebook-snapshot/</url>
-        </snapshotRepository>
-
+        <!-- ... Distribution management settings ... -->
     </distributionManagement>
 
     <build>
@@ -126,7 +122,13 @@
                     <wtpContextName>maven-web-application</wtpContextName>
                 </configuration>
             </plugin>
+
+            <!-- Update SonarQube plugin to the new location -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
         </plugins>
     </build>
-
 </project>
